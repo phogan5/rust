@@ -36,11 +36,16 @@ fn convert_to_f () {
     io::stdin()
         .read_line(&mut input)
         .expect("Failed to read line");
-    let inputint: i32 = input
+    let inputint: f64 = input
         .trim()
         .parse()
         .expect("Invalid input");
     println!("You entered: {inputint}");
+
+    //Begin math
+    let result = (inputint * 1.8 + 32.0) as f64;
+    println!("{} degrees C is equal to {} degrees F", inputint, result);
+
 }
 
 fn convert_to_c () {
@@ -49,9 +54,13 @@ fn convert_to_c () {
     io::stdin()
         .read_line(&mut input)
         .expect("Failed to read line");
-    let inputint: i32 = input
+    let inputint: f64 = input
         .trim()
         .parse()
         .expect("Invalid input");
     println!("You entered: {inputint}");
+
+    //Begin math
+    let result = ((inputint - 32.0) * (5.0/9.0)) as f64;
+    println!("{input} degrees F is equal to {result} degrees C");
 }
